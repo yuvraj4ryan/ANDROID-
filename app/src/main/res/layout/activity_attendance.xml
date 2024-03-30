@@ -54,7 +54,9 @@
                 android:gravity="center"
                 android:text="Miss More"
                 android:textColor="@android:color/black"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                />
+
         </TableRow>
 
         <!-- Subject 1 -->
