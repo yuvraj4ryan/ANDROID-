@@ -30,7 +30,7 @@ public class loginactivity extends AppCompatActivity {
 
                 // Validate the SAP ID and password
                 if (isValidCredentials(sapID, password)) {
-                    Intent intent = new Intent(loginactivity.this, dashboardActivity.class);
+                    Intent intent = new Intent(loginactivity.this,dashboardActivity.class);
                     startActivity(intent);
                 } else {
                     // Display an error message if credentials are invalid

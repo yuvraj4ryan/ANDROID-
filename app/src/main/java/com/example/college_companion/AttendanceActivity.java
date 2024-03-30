@@ -1,110 +1,108 @@
 package com.example.college_companion;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-
-
 
 public class AttendanceActivity extends AppCompatActivity {
 
-    private EditText editTextSubject1Attendance, editTextSubject1Percentage, editTextSubject1MissMore;
-    private EditText editTextSubject2Attendance, editTextSubject2Percentage, editTextSubject2MissMore;
-    private EditText editTextSubject3Attendance, editTextSubject3Percentage, editTextSubject3MissMore;
+    EditText editTextSubject1TotalHours, editTextSubject1CurrentHours;
+    EditText editTextSubject2TotalHours, editTextSubject2CurrentHours;
+    EditText editTextSubject3TotalHours, editTextSubject3CurrentHours;
+    EditText editTextSubject4TotalHours, editTextSubject4CurrentHours;
+    EditText editTextSubject5TotalHours, editTextSubject5CurrentHours;
+
+    TextView subject1CurrentPercentageTextView, subject1ClassesYouCanMissTextView;
+    TextView subject2CurrentPercentageTextView, subject2ClassesYouCanMissTextView;
+    TextView subject3CurrentPercentageTextView, subject3ClassesYouCanMissTextView;
+    TextView subject4CurrentPercentageTextView, subject4ClassesYouCanMissTextView;
+    TextView subject5CurrentPercentageTextView, subject5ClassesYouCanMissTextView;
+
+    Button calculateButton;
+    Button buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
 
-        editTextSubject1Attendance = findViewById(R.id.editTextSubject1Attendance);
-        editTextSubject1Percentage = findViewById(R.id.editTextSubject1Percentage);
-        editTextSubject1MissMore = findViewById(R.id.editTextSubject1MissMore);
+        // Initialize views
+        editTextSubject1TotalHours = findViewById(R.id.editTextSubject1TotalHours);
+        editTextSubject1CurrentHours = findViewById(R.id.editTextSubject1CurrentHours);
+        editTextSubject2TotalHours = findViewById(R.id.editTextSubject2TotalHours);
+        editTextSubject2CurrentHours = findViewById(R.id.editTextSubject2CurrentHours);
+        editTextSubject3TotalHours = findViewById(R.id.editTextSubject3TotalHours);
+        editTextSubject3CurrentHours = findViewById(R.id.editTextSubject3CurrentHours);
+        editTextSubject4TotalHours = findViewById(R.id.editTextSubject4TotalHours);
+        editTextSubject4CurrentHours = findViewById(R.id.editTextSubject4CurrentHours);
+        editTextSubject5TotalHours = findViewById(R.id.editTextSubject5TotalHours);
+        editTextSubject5CurrentHours = findViewById(R.id.editTextSubject5CurrentHours);
 
-        editTextSubject2Attendance = findViewById(R.id.editTextSubject2Attendance);
-        editTextSubject2Percentage = findViewById(R.id.editTextSubject2Percentage);
-        editTextSubject2MissMore = findViewById(R.id.editTextSubject2MissMore);
+        subject1CurrentPercentageTextView = findViewById(R.id.subject1CurrentPercentageTextView);
+        subject1ClassesYouCanMissTextView = findViewById(R.id.subject1ClassesYouCanMissTextView);
+        subject2CurrentPercentageTextView = findViewById(R.id.subject2CurrentPercentageTextView);
+        subject2ClassesYouCanMissTextView = findViewById(R.id.subject2ClassesYouCanMissTextView);
+        subject3CurrentPercentageTextView = findViewById(R.id.subject3CurrentPercentageTextView);
+        subject3ClassesYouCanMissTextView = findViewById(R.id.subject3ClassesYouCanMissTextView);
+        subject4CurrentPercentageTextView = findViewById(R.id.subject4CurrentPercentageTextView);
+        subject4ClassesYouCanMissTextView = findViewById(R.id.subject4ClassesYouCanMissTextView);
+        subject5CurrentPercentageTextView = findViewById(R.id.subject5CurrentPercentageTextView);
+        subject5ClassesYouCanMissTextView = findViewById(R.id.subject5ClassesYouCanMissTextView);
 
-        editTextSubject3Attendance = findViewById(R.id.editTextSubject3Attendance);
-        editTextSubject3Percentage = findViewById(R.id.editTextSubject3Percentage);
-        editTextSubject3MissMore = findViewById(R.id.editTextSubject3MissMore);
+        calculateButton = findViewById(R.id.calculateButton);
+        buttonBack = findViewById(R.id.buttonBack); // Initialize buttonBack
 
-        // Set sample data
-        setSampleData();
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate back to the dashboard activity
+                Intent intent = new Intent(AttendanceActivity.this, dashboardActivity.class);
+                startActivity(intent);
+                finish(); // Finish the current activity
+            }
+        });
+
+        calculateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calculateAndUpdateAttendance();
+            }
+        });
     }
 
-    private void setSampleData() {
-        // Replace with actual data
-        editTextSubject1Attendance.setText("18/20");
-        editTextSubject1Percentage.setText("90.0");
-        editTextSubject1MissMore.setText("3");
-
-        editTextSubject2Attendance.setText("14/20");
-        editTextSubject2Percentage.setText("70.0");
-        editTextSubject2MissMore.setText("6");
-
-        editTextSubject3Attendance.setText("16/20");
-        editTextSubject3Percentage.setText("80.0");
-        editTextSubject3MissMore.setText("4");
+    private void calculateAndUpdateAttendance() {
+        calculateAndUpdateSubjectAttendance(editTextSubject1TotalHours, editTextSubject1CurrentHours,
+                subject1CurrentPercentageTextView, subject1ClassesYouCanMissTextView);
+        calculateAndUpdateSubjectAttendance(editTextSubject2TotalHours, editTextSubject2CurrentHours,
+                subject2CurrentPercentageTextView, subject2ClassesYouCanMissTextView);
+        calculateAndUpdateSubjectAttendance(editTextSubject3TotalHours, editTextSubject3CurrentHours,
+                subject3CurrentPercentageTextView, subject3ClassesYouCanMissTextView);
+        calculateAndUpdateSubjectAttendance(editTextSubject4TotalHours, editTextSubject4CurrentHours,
+                subject4CurrentPercentageTextView, subject4ClassesYouCanMissTextView);
+        calculateAndUpdateSubjectAttendance(editTextSubject5TotalHours, editTextSubject5CurrentHours,
+                subject5CurrentPercentageTextView, subject5ClassesYouCanMissTextView);
     }
 
-    public void onRecalculateClick(View view) {
-        // Recalculate attendance when the user clicks the button
-        calculateAttendance();
-        Toast.makeText(this, "Attendance recalculated", Toast.LENGTH_SHORT).show();
-    }
+    private void calculateAndUpdateSubjectAttendance(EditText totalHoursEditText, EditText currentHoursEditText,
+                                                     TextView currentPercentageTextView, TextView classesYouCanMissTextView) {
+        int totalHours = Integer.parseInt(totalHoursEditText.getText().toString());
+        int currentHours = Integer.parseInt(currentHoursEditText.getText().toString());
 
-    private void calculateAttendance() {
-        // Replace the sample data with user input or actual attendance data
+        // Calculate current percentage
+        double currentPercentage = (double) currentHours / totalHours * 100;
+        currentPercentageTextView.setText(String.format("%.1f%%", currentPercentage));
 
-        // Subject 1
-        String attendanceSubject1 = editTextSubject1Attendance.getText().toString();
-        double percentageSubject1 = calculatePercentage(attendanceSubject1);
-        int missMoreSubject1 = calculateMissMore(attendanceSubject1, percentageSubject1);
-
-        // Subject 2
-        String attendanceSubject2 = editTextSubject2Attendance.getText().toString();
-        double percentageSubject2 = calculatePercentage(attendanceSubject2);
-        int missMoreSubject2 = calculateMissMore(attendanceSubject2, percentageSubject2);
-
-        // Subject 3
-        String attendanceSubject3 = editTextSubject3Attendance.getText().toString();
-        double percentageSubject3 = calculatePercentage(attendanceSubject3);
-        int missMoreSubject3 = calculateMissMore(attendanceSubject3, percentageSubject3);
-
-        // Update EditTexts with calculated values
-        editTextSubject1Percentage.setText(String.format("%.1f", percentageSubject1));
-        editTextSubject2Percentage.setText(String.format("%.1f", percentageSubject2));
-        editTextSubject3Percentage.setText(String.format("%.1f", percentageSubject3));
-
-        editTextSubject1MissMore.setText(String.valueOf(missMoreSubject1));
-        editTextSubject2MissMore.setText(String.valueOf(missMoreSubject2));
-        editTextSubject3MissMore.setText(String.valueOf(missMoreSubject3));
-    }
-
-    private double calculatePercentage(String attendance) {
-        String[] parts = attendance.split("/");
-        if (parts.length == 2) {
-            int attended = Integer.parseInt(parts[0]);
-            int total = Integer.parseInt(parts[1]);
-            return (attended * 100.0) / total;
+        // Calculate classes a student can miss to maintain 80% attendance
+        int classesYouCanMiss = (int) Math.ceil(0.2 * totalHours) - (totalHours - currentHours);
+        if (classesYouCanMiss < 0) {
+            classesYouCanMiss = 0;
         }
-        return 0.0;
+
+        classesYouCanMissTextView.setText(String.valueOf(classesYouCanMiss));
     }
 
-    private int calculateMissMore(String attendance, double percentage) {
-        String[] parts = attendance.split("/");
-        if (parts.length == 2) {
-            int total = Integer.parseInt(parts[1]);
-            return (int) Math.ceil((percentage * 80 / 100 - total + Integer.parseInt(parts[0])) / 0.8);
-        }
-        return 0;
-    }
 }
