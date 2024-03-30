@@ -36,6 +36,10 @@ public class dashboardActivity extends AppCompatActivity {
             imageButtonIds.add(R.drawable.results);
             imageButtonIds.add(R.drawable.timetable);
 
+
+
+
+
             // Set up adapter for the GridView
             ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_list_item_1, imageButtonIds) {
                 @Override
@@ -68,6 +72,7 @@ public class dashboardActivity extends AppCompatActivity {
                 Toast.makeText(dashboardActivity.this, "Clicked on item " + position, Toast.LENGTH_SHORT).show();
             });
         }
+
 
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
