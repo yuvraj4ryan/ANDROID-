@@ -55,6 +55,9 @@
         android:backgroundTint="@color/darkblue"
         android:fontFamily="sans-serif-smallcaps"
         android:textAlignment="center"
-        android:onClick="onBackButtonClicked" />
+        android:onClick="onBackButtonClicked"
+        />
+
+
 
 </RelativeLayout>

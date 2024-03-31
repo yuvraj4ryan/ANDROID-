@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E2759">
+    android:background="#CED3EC"
+    android:id="@+id/relativeLayout">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
@@ -23,16 +24,14 @@
         android:layout_below="@id/toolbar"
         android:layout_marginTop="-67dp"
         android:background="#131A40"
-        android:backgroundTint="@color/darkblue"
+        android:backgroundTint="#262F67"
         android:fontFamily="sans-serif-smallcaps"
-        android:padding="40dp"
+        android:padding="30dp"
         android:text="@string/welcome_message"
-
         android:textAlignment="center"
         android:textAllCaps="true"
-
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="30sp"
         android:textStyle="bold"
 
         />

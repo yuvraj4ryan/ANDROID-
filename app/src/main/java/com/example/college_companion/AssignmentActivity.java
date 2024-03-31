@@ -19,6 +19,7 @@ public class AssignmentActivity extends AppCompatActivity {
     private RadioGroup subject4RadioGroup;
     private RadioGroup subject5RadioGroup;
     private Button trackAssignmentsButton;
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +32,21 @@ public class AssignmentActivity extends AppCompatActivity {
         subject4RadioGroup = findViewById(R.id.subject4RadioGroup);
         subject5RadioGroup = findViewById(R.id.subject5RadioGroup);
         trackAssignmentsButton = findViewById(R.id.trackAssignmentsButton);
+        backButton = findViewById(R.id.bt1);
 
         trackAssignmentsButton.setEnabled(false); // Initially disable the button
 
         // Set onClickListeners to RadioGroups
         setRadioGroupListeners();
+
+        // Set OnClickListener for the back button
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AssignmentActivity.this, dashboardActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setRadioGroupListeners() {

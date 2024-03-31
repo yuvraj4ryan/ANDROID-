@@ -121,7 +121,7 @@
                 android:gravity="center"
                 android:hint="Total Hours"
                 android:inputType="number"
-                android:text="80"
+                android:text="30"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -135,7 +135,7 @@
                 android:gravity="center"
                 android:hint="Current Hours"
                 android:inputType="number"
-                android:text="60"
+                android:text="21"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -197,7 +197,7 @@
                 android:gravity="center"
                 android:hint="Total Hours"
                 android:inputType="number"
-                android:text="70"
+                android:text="40"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -211,7 +211,7 @@
                 android:gravity="center"
                 android:hint="Current Hours"
                 android:inputType="number"
-                android:text="50"
+                android:text="36"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -273,7 +273,7 @@
                 android:gravity="center"
                 android:hint="Total Hours"
                 android:inputType="number"
-                android:text="90"
+                android:text="35"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -287,7 +287,7 @@
                 android:gravity="center"
                 android:hint="Current Hours"
                 android:inputType="number"
-                android:text="75"
+                android:text="21"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -349,7 +349,7 @@
                 android:gravity="center"
                 android:hint="Total Hours"
                 android:inputType="number"
-                android:text="80"
+                android:text="40"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -363,7 +363,7 @@
                 android:gravity="center"
                 android:hint="Current Hours"
                 android:inputType="number"
-                android:text="60"
+                android:text="30"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -425,7 +425,7 @@
                 android:gravity="center"
                 android:hint="Total Hours"
                 android:inputType="number"
-                android:text="100"
+                android:text="38"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
@@ -439,7 +439,7 @@
                 android:gravity="center"
                 android:hint="Current Hours"
                 android:inputType="number"
-                android:text="80"
+                android:text="27"
                 android:textColor="@android:color/black"
                 android:textSize="18sp" />
 
