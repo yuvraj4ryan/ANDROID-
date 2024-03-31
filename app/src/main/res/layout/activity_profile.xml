@@ -2,18 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="#1A1E37">
 
     <!-- Heading -->
     <TextView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Student Profile"
-        android:textColor="#FFFFFF"
+        android:text="STUDENT PROFILE"
         android:textSize="24sp"
-        android:padding="16dp"
-        android:background="#182257"
+        android:padding="26dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"
+        android:backgroundTint="@color/darkblue"
+        android:background="#273EAE"
         android:layout_alignParentTop="true"
         android:gravity="center"/>
 
@@ -25,15 +28,16 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="90dp"
-        android:src="@drawable/assignments" />
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/man" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yuvraj Aaryan "
+        android:text="Yuvraj Aryan "
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="28sp"
+        android:textStyle="bold"
         android:layout_below="@id/profilePicture"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp" />
@@ -48,7 +52,7 @@
         android:textSize="18sp"
         android:textColor="#F8EFEF"
         android:layout_below="@id/profilePicture"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="94dp"
         android:layout_marginStart="24dp"/>
 
     <TextView
@@ -79,7 +83,7 @@
         android:id="@+id/emailValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="yuvrajsmart@nmims.in"
+        android:text="yuvrajaryan@nmims.in"
         android:textSize="18sp"
         android:textColor="#FAF3F3"
         android:layout_toEndOf="@id/emailLabel"

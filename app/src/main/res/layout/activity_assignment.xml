@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_assignment">
+    android:background="@drawable/bg_assignment"
+    >
+
+
+
 
     <!-- Header Section -->
     <RelativeLayout
@@ -20,11 +24,35 @@
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:padding="20dp"
             android:fontFamily="sans-serif-smallcaps"
             android:backgroundTint="@color/darkblue"
             android:layout_centerHorizontal="true"/>
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/TextSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerSection"
+
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit your assignments!"
+            android:textColor="@color/darkblue"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:padding="20dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:backgroundTint="@color/darkblue"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
 
     <!-- Subject 1 Section -->
     <RelativeLayout
@@ -78,7 +106,7 @@
                 android:textSize="16sp" />
         </RadioGroup>
 
-        <!-- SHARE PDF 
+        <!-- SHARE PDF
  Button for Subject 1 -->
         <Button
             android:id="@+id/uploadSubject1Button"
@@ -90,12 +118,12 @@
             android:backgroundTint="@color/darkblue"
             android:elevation="4dp"
             android:fontFamily="sans-serif-smallcaps"
+            android:onClick="onSharePDF"
             android:paddingStart="16dp"
             android:paddingTop="8dp"
             android:paddingEnd="16dp"
             android:paddingBottom="8dp"
             android:text="SHARE PDF"
-            android:onClick="onSharePDF"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             android:textStyle="bold" />
@@ -152,7 +180,7 @@
                 android:textSize="16sp" />
         </RadioGroup>
 
-        <!-- SHARE PDF 
+        <!-- SHARE PDF
  Button for Subject 2 -->
         <Button
             android:id="@+id/uploadSubject2Button"
@@ -169,7 +197,7 @@
             android:onClick="onSharePDF"
             android:paddingEnd="16dp"
             android:paddingBottom="8dp"
-            android:text="SHARE PDF 
+            android:text="SHARE PDF
 "
             android:textColor="#FFFFFF"
             android:textSize="14sp"
@@ -227,7 +255,7 @@
                 android:textSize="16sp" />
         </RadioGroup>
 
-        <!-- SHARE PDF 
+        <!-- SHARE PDF
  Button for Subject 3 -->
         <Button
             android:id="@+id/uploadSubject3Button"
@@ -244,7 +272,7 @@
             android:paddingTop="8dp"
             android:paddingEnd="16dp"
             android:paddingBottom="8dp"
-            android:text="SHARE PDF 
+            android:text="SHARE PDF
 "
             android:textColor="#FFFFFF"
             android:textSize="14sp"
@@ -303,7 +331,7 @@
                 android:textSize="16sp" />
         </RadioGroup>
 
-        <!-- SHARE PDF 
+        <!-- SHARE PDF
  Button for Subject 4 -->
         <Button
             android:id="@+id/uploadSubject4Button"
@@ -321,7 +349,7 @@
 
             android:paddingEnd="16dp"
             android:paddingBottom="8dp"
-            android:text="SHARE PDF 
+            android:text="SHARE PDF
 "
             android:textColor="#FFFFFF"
             android:textSize="14sp"
@@ -378,7 +406,7 @@
                 android:textSize="16sp" />
         </RadioGroup>
 
-        <!-- SHARE PDF 
+        <!-- SHARE PDF
  Button for Subject 5 -->
         <Button
             android:id="@+id/uploadSubject5Button"
@@ -408,7 +436,7 @@
         android:layout_below="@id/subject5Section"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Track Weekly Assignment"
+        android:text="Track Weekly AssignmentS"
         android:textColor="#FFFFFF"
         android:backgroundTint="@color/darkblue"
         android:elevation="4dp"

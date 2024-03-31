@@ -49,6 +49,10 @@
                 android:text="Welcome"
                 android:textColor="@color/colorPrimary"
                 android:textSize="32sp"
+
+                android:fontFamily="sans-serif-medium"
+                android:backgroundTint="@color/darkblue"
+                app:cornerRadius="20dp"
                 android:textStyle="bold"/>
 
             <TextView
