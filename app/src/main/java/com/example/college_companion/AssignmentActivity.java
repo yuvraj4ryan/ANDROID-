@@ -34,17 +34,12 @@ public class AssignmentActivity extends AppCompatActivity {
         trackAssignmentsButton = findViewById(R.id.trackAssignmentsButton);
         backButton = findViewById(R.id.bt1);
 
-        trackAssignmentsButton.setEnabled(false); // Initially disable the button
-
-        // Set onClickListeners to RadioGroups
-        setRadioGroupListeners();
-
-        // Set OnClickListener for the back button
-        backButton.setOnClickListener(new View.OnClickListener() {
+        Button trackAssignmentsButton = findViewById(R.id.trackAssignmentsButton);
+        trackAssignmentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AssignmentActivity.this, dashboardActivity.class);
-                startActivity(intent);
+                // Show toast indicating that assignments are uploaded
+                Toast.makeText(AssignmentActivity.this, "Assignments are uploaded", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -98,4 +93,6 @@ public class AssignmentActivity extends AppCompatActivity {
             Toast.makeText(this, "Deadlines are not met", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }

@@ -1,19 +1,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#D9EAD3"
-    tools:context=".AttendanceActivity">
+    android:layout_height="match_parent"
+    android:background="#C4DFDF"
+    >
+
+    <!-- Attendance Heading -->
+    <TextView
+        android:id="@+id/attendanceHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ATTENDANCE"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"
+        android:background="@color/darkblue"
+        android:padding="16dp"/>
+    <TextView
+        android:id="@+id/attendanceText"
+        android:layout_below="@+id/attendanceHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Track your Attendance !"
+        android:textSize="24sp"
+        android:textColor="@color/darkblue"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:padding="16dp"/>
 
     <!-- Attendance Table -->
     <TableLayout
         android:id="@+id/attendanceTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/attendanceHeading"
         android:background="@android:color/white"
         android:elevation="4dp"
-        android:padding="16dp">
+        android:layout_marginTop="125dp"
+        android:padding="25dp">
 
         <!-- Table Header -->
         <TableRow
@@ -35,60 +62,64 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
+            <!-- Headers -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black"
-                android:gravity="center"
-                android:padding="8dp"
+                android:background="@color/darkblue"
                 android:backgroundTint="@color/darkblue"
                 android:fontFamily="sans-serif-smallcaps"
+                android:gravity="center"
+                android:padding="8dp"
                 android:text="Total Hours"
                 android:textColor="@android:color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
+            <!-- Headers -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black"
+                android:background="@color/darkblue"
+                android:backgroundTint="@color/darkblue"
+                android:fontFamily="sans-serif-smallcaps"
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="Current Hours"
                 android:textColor="@android:color/white"
                 android:textSize="15sp"
-                android:backgroundTint="@color/darkblue"
-                android:fontFamily="sans-serif-smallcaps"
                 android:textStyle="bold" />
 
+            <!-- Headers -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black"
+                android:background="@color/darkblue"
+                android:backgroundTint="@color/darkblue"
+                android:fontFamily="sans-serif-smallcaps"
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="Percentage"
                 android:textColor="@android:color/white"
-                android:textSize="11sp"
-                android:backgroundTint="@color/darkblue"
-                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
+            <!-- Headers -->
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black"
+                android:background="@color/darkblue"
+                android:backgroundTint="@color/darkblue"
+                android:fontFamily="sans-serif-smallcaps"
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="Miss More"
-                android:backgroundTint="@color/darkblue"
-                android:fontFamily="sans-serif-smallcaps"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
         </TableRow>
@@ -483,25 +514,24 @@
         android:layout_below="@id/attendanceTable"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:onClick="onCalculateButtonClicked"
         android:text="CALCULATE"
         android:textSize="18sp"
         android:backgroundTint="@color/darkblue"
         android:fontFamily="sans-serif-smallcaps"
         android:textStyle="bold" />
+
+    <!-- Back Button -->
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/calculateButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:onClick="onButtonClicked"
+        android:layout_marginTop="16dp"
         android:text="BACK"
         android:textSize="18sp"
         android:backgroundTint="@color/darkblue"
         android:fontFamily="sans-serif-smallcaps"
         android:textStyle="bold" />
-
 
 </RelativeLayout>
