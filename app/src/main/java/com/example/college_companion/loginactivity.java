@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class loginactivity extends AppCompatActivity {
 
     @Override
@@ -21,21 +19,18 @@ public class loginactivity extends AppCompatActivity {
         EditText editTextSAPID = findViewById(R.id.editTextSAPID);
         EditText editTextPassword = findViewById(R.id.editTextPassword);
         Button loginButton = findViewById(R.id.buttonLogin);
-        FirebaseAuth mAuth;
-// ...
-// Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+
         // Set click listener for the login button
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Get the entered SAP ID and password
-7                String sapID = editTextSAPID.getText().toString();
+                String sapID = editTextSAPID.getText().toString();
                 String password = editTextPassword.getText().toString();
 
                 // Validate the SAP ID and password
                 if (isValidCredentials(sapID, password)) {
-                    Intent intent = new Intent(loginactivity.this,dashboardActivity.class);
+                    Intent intent = new Intent(loginactivity.this, dashboardActivity.class);
                     startActivity(intent);
                 } else {
                     // Display an error message if credentials are invalid
