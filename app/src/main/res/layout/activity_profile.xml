@@ -18,7 +18,8 @@
         android:backgroundTint="@color/darkblue"
         android:background="#273EAE"
         android:layout_alignParentTop="true"
-        android:gravity="center"/>
+        android:gravity="center"
+        />
 
     <!-- Profile Picture -->
 
